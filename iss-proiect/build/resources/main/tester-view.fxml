@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.iss2024.controller.TesterController">
+   <children>
+      <TableView fx:id="tableBugs" layoutX="14.0" layoutY="55.0" prefHeight="264.0" prefWidth="303.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="nume" prefWidth="75.0" text="name" />
+            <TableColumn fx:id="description" prefWidth="75.0" text="description" />
+            <TableColumn fx:id="status" prefWidth="75.0" text="status" />
+        </columns>
+      </TableView>
+      <TextField fx:id="nume_field" layoutX="423.0" layoutY="83.0" />
+      <TextArea fx:id="descriere_area" layoutX="422.0" layoutY="120.0" prefHeight="158.0" prefWidth="150.0" />
+      <Label layoutX="370.0" layoutY="87.0" text="nume" />
+      <Label layoutX="361.0" layoutY="178.0" text="descriere" />
+      <Button onAction="#handleAdd" layoutX="479.0" layoutY="293.0" mnemonicParsing="false" text="add" />
+   </children>
+</AnchorPane>

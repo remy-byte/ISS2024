@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.iss2024.controller.ProgramatorController">
+   <children>
+      <TableView fx:id="tableBug" layoutX="27.0" layoutY="90.0" prefHeight="200.0" prefWidth="546.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="name" prefWidth="75.0" text="name" />
+            <TableColumn fx:id="descriere" prefWidth="320.8000030517578" text="descriere" />
+            <TableColumn fx:id="status" minWidth="0.0" prefWidth="74.4000244140625" text="status" />
+        </columns>
+      </TableView>
+      <Button onAction="#handleUpdate" layoutX="93.0" layoutY="330.0" mnemonicParsing="false" text="rezolva bug" />
+      <Button onAction="#filterByStatus" layoutX="412.0" layoutY="330.0" mnemonicParsing="false" text="filtreaza dupa status" />
+   </children>
+</AnchorPane>

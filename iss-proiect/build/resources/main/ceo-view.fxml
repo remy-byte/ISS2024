@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ro.iss2024.controller.CEOController">
+   <children>
+      <TableView fx:id="tableUseri" layoutX="60.0" layoutY="70.0" prefHeight="209.0" prefWidth="260.0">
+        <columns>
+          <TableColumn fx:id="username" prefWidth="138.5999984741211" text="username" />
+          <TableColumn fx:id="role" prefWidth="121.39999389648438" text="rol" />
+        </columns>
+      </TableView>
+      <TextField fx:id="username_field" layoutX="436.0" layoutY="70.0" />
+      <TextField fx:id="password_field" layoutX="436.0" layoutY="123.0" />
+      <ChoiceBox fx:id="choiceBox" layoutX="435.0" layoutY="175.0" prefWidth="150.0" />
+      <Button onAction="#handleAdd" layoutX="492.0" layoutY="233.0" mnemonicParsing="false" text="add" />
+      <Button onAction="#handleDelete" layoutX="164.0" layoutY="322.0" mnemonicParsing="false" text="delete" />
+      <Label layoutX="387.0" layoutY="74.0" text="nume" />
+      <Label layoutX="378.0" layoutY="127.0" text="prenume" />
+      <Label layoutX="388.0" layoutY="179.0" text="role" />
+   </children>
+</AnchorPane>

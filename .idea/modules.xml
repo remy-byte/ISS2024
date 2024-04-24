@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ISS2024.iml" filepath="$PROJECT_DIR$/.idea/ISS2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iss-proiect.iml" filepath="$PROJECT_DIR$/iss-proiect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iss-proiect.main.iml" filepath="$PROJECT_DIR$/.idea/modules/iss-proiect.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/iss-proiect.test.iml" filepath="$PROJECT_DIR$/.idea/modules/iss-proiect.test.iml" />
     </modules>
   </component>
 </project>
