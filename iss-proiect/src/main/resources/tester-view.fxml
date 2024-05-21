@@ -17,6 +17,7 @@
       <TextArea fx:id="descriere_area" layoutX="422.0" layoutY="120.0" prefHeight="158.0" prefWidth="150.0" />
       <Label layoutX="370.0" layoutY="87.0" text="nume" />
       <Label layoutX="361.0" layoutY="178.0" text="descriere" />
-      <Button onAction="#handleAdd" layoutX="479.0" layoutY="293.0" mnemonicParsing="false" text="add" />
+      <Button layoutX="479.0" layoutY="293.0" mnemonicParsing="false" onAction="#handleAdd" text="add" />
+      <Button onAction="#handleLogOut" layoutX="309.0" layoutY="23.0" mnemonicParsing="false" text="LogOut" />
    </children>
 </AnchorPane>

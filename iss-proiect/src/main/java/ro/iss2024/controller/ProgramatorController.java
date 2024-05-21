@@ -8,13 +8,16 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import ro.iss2024.domain.Bug;
 import ro.iss2024.domain.StatusBug;
+import ro.iss2024.event.EventBug;
+import ro.iss2024.observer.Observer;
 import ro.iss2024.service.Service;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class ProgramatorController {
+public class ProgramatorController implements Observer<EventBug> {
     public TableView tableBug;
     public TableColumn id;
     public TableColumn name;
@@ -55,6 +58,7 @@ public class ProgramatorController {
 
     public void setService(Service service) {
         this.service = service;
+        this.service.addObserver(this);
         initModel();
         populateBugs();
     }
@@ -78,5 +82,11 @@ public class ProgramatorController {
 
         this.bugs.setAll(bugsList);
         
+    }
+
+    @Override
+    public void update(EventBug eventBug) throws SQLException {
+        initModel();
+        populateBugs();
     }
 }

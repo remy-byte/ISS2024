@@ -3,20 +3,26 @@ package ro.iss2024.controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import ro.iss2024.domain.Bug;
 import ro.iss2024.domain.StatusBug;
+import ro.iss2024.event.EventBug;
+import ro.iss2024.observer.Observable;
+import ro.iss2024.observer.Observer;
 import ro.iss2024.service.Service;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class TesterController {
+public class TesterController implements Observer<EventBug> {
 
     public TableView tableBugs;
     public TableColumn id;
@@ -30,6 +36,7 @@ public class TesterController {
     Service service = null;
     public void setService(Service service) {
         this.service = service;
+        this.service.addObserver(this);
         initModel();
         populateBugs();
     }
@@ -65,5 +72,17 @@ public class TesterController {
         initModel();
         populateBugs();
 
+    }
+
+    @Override
+    public void update(EventBug eventBug) throws SQLException {
+        initModel();
+        populateBugs();
+    }
+
+    public void handleLogOut(ActionEvent actionEvent) {
+        this.service.removeObserver(this);
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
     }
 }
